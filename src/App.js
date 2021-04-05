@@ -4,7 +4,7 @@ import ReactFlow, { ReactFlowProvider } from 'react-flow-renderer'
 function App() {
   return (
     <>
-      <div style={{ width: 500, height: 500 }}>
+      <div style={{ width: 500, height: 500, border: '1px solid red' }}>
         <ReactFlowProvider>
           <ReactFlow
             elements={[
@@ -22,7 +22,7 @@ function App() {
         </ReactFlowProvider>
       </div>
 
-      <div style={{ width: 500, height: 500 }}>
+      <div style={{ width: 500, height: 500, border: '1px solid red' }}>
         <ReactFlowProvider>
           <ReactFlow
             elements={[

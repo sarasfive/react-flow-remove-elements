@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import ReactFlow, { ReactFlowProvider } from 'react-flow-renderer'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div style={{ width: 500, height: 500 }}>
+        <ReactFlowProvider>
+          <ReactFlow
+            elements={[
+              {
+                id: 'node-1',
+                data: { label: 'node 1' },
+                position: { x: 0, y: 0 }
+              }
+            ]}
+            deleteKeyCode={8}
+            onElementsRemove={() =>
+              console.log('Removing elements from 1st flow')
+            }
+          />
+        </ReactFlowProvider>
+      </div>
+
+      <div style={{ width: 500, height: 500 }}>
+        <ReactFlowProvider>
+          <ReactFlow
+            elements={[
+              {
+                id: 'node-2',
+                data: { label: 'node 2' },
+                position: { x: 0, y: 0 }
+              }
+            ]}
+            deleteKeyCode={8}
+            onElementsRemove={() =>
+              console.log('Removing elements from 2nd flow')
+            }
+          />
+        </ReactFlowProvider>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
